@@ -1,0 +1,56 @@
+[
+    {
+        "non-self-closing":
+        {
+            "tag":"div",
+            "attr":
+            {
+                "class":"form_title"    
+            },
+            "elements":
+            [
+                {
+                    "self-closing":
+                    {
+                        "tag":"img",
+                        "attr":
+                        {
+                            "class":"img main",
+                            "src":"img/show_record.png"    
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "injection":{}
+    },
+    {
+        "non-self-closing":
+        {
+            "tag":"button",
+            "attr":
+            {
+                "type":"submit",
+                "class":"btn full",
+                "id":"btn_home",
+                "name":"btn_home"
+            },
+            "elements":
+            [
+                {
+                    "self-closing":
+                    {
+                        "tag": "img",
+                        "attr":
+                        {
+                            "class":"img home",
+                            "src":"img/home.png"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+]
