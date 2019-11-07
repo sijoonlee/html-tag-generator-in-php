@@ -12,43 +12,49 @@
 
 - Details below
 --------------------------------------------------------------------
- Renderable.php
+Classes and Interface in Renderable.php
 --------------------------------------------------------------------
- Renderable
- - Interface
- - abstract render() method
+I. Interface
 
- Interface Renderable <- Class SelfClosingTag
- Interface Renderable <- Class ClosingTag
- Interface Renderable <- Class Text
+ `Renderable`(Interface)
+ - abstract render() method  
 
- Class Text
+Implement Interface to Classes
+- Interface Renderable <- Class SelfClosingTag  
+- Interface Renderable <- Class ClosingTag  
+- Interface Renderable <- Class Text  
+
+  
+II. Classes
+
+`Text`(Class)
  - represent pure text (without html)
  - render() method
  
- Class SelfClosingTag
+`SelfClosingTag`(Class)
  - represent self-closing html tags (e.g. input)
  - render() method to generate html tags
  
- Class Non-selfClosingTag
+`Non-selfClosingTag`( lass)
  - represent non-self-closing html tags (e.g. div)
  - have the array to keep nested html tags, which are Renderable with render() method 
  - provide function addElement(Renderable obj);
    which means that classes are able to form tree structure.
  - render() method to generate HTML including nested html tags
  
- 
- Inheritance
- SelfClosingTag <- Img, Input
- NonSelfClosingTag <- Div, Form, Button, Label, and so on 
+Inheritance  
+-  SelfClosingTag <- Img, Input  
+-  NonSelfClosingTag <- Div, Form, Button, Label, and so on   
 
- Usage
- 1. Create image button
-      $img_button = new Button( ["class"=>"classB"] , [new Img(["src"=>"home.png"])]);
- 2. Create text button
-      $text_button = new Button( ["class"=>"classB"] , [new Text("save")]);
- 3. Create div and have two buttons above nested
-      $div_data_pair = new Div( ["class"=>"datapair"], [$img_button, $text_button]);
- 4. Render div
-      echo $div_data_pair->render();
+  
+III. Usage  
+
+ 1. Create image button  
+      $img_button = new Button( ["class"=>"classB"] , [new Img(["src"=>"home.png"])]);  
+ 2. Create text button  
+      $text_button = new Button( ["class"=>"classB"] , [new Text("save")]);  
+ 3. Create div and have two buttons above nested  
+      $div_data_pair = new Div( ["class"=>"datapair"], [$img_button, $text_button]);  
+ 4. Render div  
+      echo $div_data_pair->render();  
 
